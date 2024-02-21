@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>847.2,1559.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>860,1559.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -230,11 +230,7 @@
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="Merger_Acquisition_Data" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="Education_Data" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="Economy_Data" />
-      <Variable x:TypeArguments="x:Int32" Name="Count">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="Count" />
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="Remove_Empty_Rows" />
       <Variable x:TypeArguments="x:String" Name="UserInput" />
       <Variable x:TypeArguments="njl:JObject" Default="[New JObject()]" Name="ChatGPTInput" />
@@ -248,16 +244,8 @@
       <Variable x:TypeArguments="x:String" Name="originalString" />
       <Variable x:TypeArguments="x:String" Name="compareString" />
       <Variable x:TypeArguments="str:Regex" Name="Regex" />
-      <Variable x:TypeArguments="x:String" Name="To_Mail">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Add Email</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Name="CC_Mail">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Add Email if you want more than 1 use semicolon(;) after every mail id</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="Add Email" Name="To_Mail" />
+      <Variable x:TypeArguments="x:String" Default="Add Email if you want more than 1 use semicolon(;) after every mail id" Name="CC_Mail" />
       <Variable x:TypeArguments="s:String[]" Default="[New String() {&quot;Energy&quot;,&quot;Hydrogen&quot;,&quot;Solar Panel&quot;,&quot;Carbon capture&quot;,&quot;Renewables&quot;,&quot;Oil&quot;,&quot;Gas&quot;,&quot;Green Energy&quot;,&quot;Clean Energy&quot;,&quot;Grid&quot;,&quot;Utilities&quot;,&quot;ADNOC&quot;}]" Name="Energy_Keyword_Array" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Energy_News_zawya" />
       <Variable x:TypeArguments="x:String" Name="Todays_Date" />
@@ -3586,7 +3574,7 @@
           <av:PointCollection x:Key="ConnectorLocation">610,360 580,360 580,384 428.4,384</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence sap2010:Annotation.AnnotationText="Opening Bing to Search&#xA;&#xA;1. Extracting news from various news source(zawya.com, khaleejtimes.com, gulfnews.com, gulfbusiness.com, arabianbusiness.com, emirates247.com, meed.com etc) if less than 5 news extracted then go get world news on those sector.&#xA;&#xA;2. Dumping the complete data in excel sheets.&#xA;&#xA;3. Removing the Dublicate data from excel.&#xA;&#xA;4. Removing empty row from the excel.&#xA;" DisplayName="Web Scarping " sap:VirtualizedContainerService.HintSize="200,463.2" sap2010:WorkflowViewState.IdRef="Sequence_2627">
+      <Sequence sap2010:Annotation.AnnotationText="Opening Bing to Search&#xA;&#xA;1. Extracting news from various news source(zawya.com, khaleejtimes.com, gulfnews.com, gulfbusiness.com, arabianbusiness.com, emirates247.com, meed.com etc) if less than 5 news extracted then go get world news on those sector.&#xA;&#xA;2. Dumping the complete data in excel sheets.&#xA;&#xA;3. Removing the Dublicate data from excel.&#xA;&#xA;4. Removing empty row from the excel.&#xA;" DisplayName="Web Scarping " sap:VirtualizedContainerService.HintSize="793.6,22690.4" sap2010:WorkflowViewState.IdRef="Sequence_2627">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3594,7 +3582,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Energy news (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh | loc:eg | loc:ir" sap:VirtualizedContainerService.HintSize="731.2,19405.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_67" InteractionMode="DebuggerApi" ScopeGuid="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Energy news (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh | loc:eg | loc:ir" sap:VirtualizedContainerService.HintSize="731.2,19445.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_67" InteractionMode="DebuggerApi" ScopeGuid="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Version="V2" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -3607,7 +3595,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Energy keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_37" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Energy_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Energy keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_37" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Energy_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=Energy+news+%28loc%3Aae+%7C+loc%3Asa+%7C+loc%3Aom+%7C+loc%3Aqa+%7C+loc%3Akw+%7C+loc%3Abh+%7C+loc%3Aeg+%7C+loc%3Air+%7C+loc%3Aiq+%7C+loc%3Ail+%7C+loc%3Ajo+%7C+loc%3Aye+%7C+loc%3Alb+%7C+loc%3Aly+%7C+loc%3Ama%29%28site%3Azawya.com+%7C+site%3Akhaleejtimes.com+%7C+site%3Agulfnews.com+%7C+site%3Agulfbusiness.com+%7C+site%3Aarabianbusiness.com+%7C+site%3Aemirates247.com+%7C+site%3Ameed.com%29&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=energy+news+%28loc%3Aae+%7C+loc%3Asa+%7C+loc%3Aom+%7C+loc%3Aqa+%7C+loc%3Akw+%7C+loc%3Abh+%7C+loc%3Aeg+%7C+loc%3Air+%7C+loc%3Aiq+%7C+loc%3Ail&amp;sc=0-100&amp;sk=&amp;cvid=E88756D6894147DEB9E12448A3815CCD&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvElementArea="212, 175, 813, 64" CvType="InputBox" DesignTimeRectangle="216, 180, 669, 55" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Energy news'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="392bcc34-31e4-4670-b140-8b4c5e906dde" InformativeScreenshot="5cc5cb0c17cfcb5b39a80c38be1125ad.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Energy news (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh | loc:eg | loc:ir | loc:iq | loc:il | loc:jo | loc:ye | loc:lb | loc:ly | loc:ma)(site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com) - Search News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -3650,7 +3638,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Energy Keywords World News" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_46" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Energy news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Energy Keywords World News" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_46" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Energy news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=%28intitle%3AEnergy+%7C+inanchor%3AEnergy%29&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=%28intitle%3Aipo+%7C+inanchor%3Aipo%29&amp;sc=0-28&amp;sk=&amp;cvid=8D2682195B5B498AA121A127811098A7&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvElementArea="251, 141, 978, 74" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Energy inancho…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="5a10359e-51d1-4b8c-bb23-ef1cb782442a" InformativeScreenshot="f9d64c7806154d3e68cb40f3f1f57255.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Energy | inanchor:Energy) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                         </uix:NTypeInto.Target>
@@ -3697,7 +3685,7 @@
                   </If.Else>
                 </If>
                 <ui:MergeDataTable Destination="[Energy_Data]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="410.4,134.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_3" MissingSchemaAction="Add" Source="[Energy_Data_Broadened]" />
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Pharmaceutical keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_38" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Pharma_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Pharmaceutical keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_38" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Pharma_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=(intitle%3aEnergy+%7c+inanchor%3aEnergy)+(loc%3aae+%7c+loc%3asa+%7c+loc%3aom+%7c+loc%3aqa+%7c+loc%3akw+%7c+loc%3abh%7c+loc%3aAU+%7c+loc%3aeu)+(site%3azawya.com+%7c+site%3akhaleejtimes.com+%7c+site%3agulfnews.com+%7c+site%3agulfbusiness.com+%7c+site%3aarabianbusiness.com+%7c+site%3aemirates247.com+%7c+site%3ameed.com)&amp;qft=interval%3d%227%22&amp;form=PTFTNR" CvTextArea="286, 237, 762, 28" CvTextArgument="(intitle:Energy I inanchor:Energy) (loc:ae loc:sa loc:om loc:qa I loc:kw" CvType="Text" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Energy inancho…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="14000d76-fea6-448c-95fd-f605f94757b2" InformativeScreenshot="8a86bafe0fea08735ffcdff9710659bf.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Energy | inanchor:Energy) (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh| loc:AU | loc:eu) (site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -3739,7 +3727,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Energy Keywords World News" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_47" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Pharmaceutical news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Energy Keywords World News" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_47" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Pharmaceutical news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=%28intitle%3AEnergy+%7C+inanchor%3AEnergy%29&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=&amp;sc=6-0&amp;sk=&amp;cvid=B31CDC9A5A1C4FB08F99332A49ADCAC2&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvElementArea="251, 141, 981, 76" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Energy inancho…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="01e5a97d-38b4-432d-8834-783cb731a18b" InformativeScreenshot="dfa460ae17963ce2372598ed99ec56d8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Energy | inanchor:Energy) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                         </uix:NTypeInto.Target>
@@ -3761,7 +3749,7 @@
                         <uix:NSelectItem.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=pharmaceutical+news+&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=pharmaceutical+news+&amp;sc=10-20&amp;sk=&amp;cvid=E9B74DFF127845839175A176859D87D3&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvTextArea="320, 345, 71, 21" CvTextArgument="Any time" CvType="Text" DesignTimeRectangle="304, 335, 121, 40" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Any time'" FullSelectorArgument="&lt;webctrl aria-label='Any time' aria-role='button' tag='A' /&gt;" FuzzyAccuracy="1" FuzzySelectorArgument="&lt;webctrl aria-label='Any time' aria-role='button' tag='A' type='' class='l1' aaname='Any time' check:innerText='Any time' /&gt;" Guid="9da671d1-1412-4e6c-b7b6-1682c0609d8c" InformativeScreenshot="f72ad5e2cf5ea2fc95f35a41455c2e66.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='pharmaceutical news - Search News' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                 <uix:Target DesignTimeRectangle="398, 353, 9, 5" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='sw_ddbk' parentid='tf' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='sw_ddbk' parentid='tf' tag='SPAN' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAA0AAAAJCAYAAADpeqZqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAB6SURBVChTpZDLCoAgEEX7akmwdfQRvXFdbWrnJ7kRRHRxi5SgFII6MJvhHuaR4QP/JCEEKKUghETFWBFSnktyzqHt+qS0rltIeW7rGWPQDeMVzo/J07zAWhsSnugmrTXKsjqlum7ODZ4kHyGlBOccSqnQuZOU3vggATuD+a+qs2e52AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector" />
                               </scg:List>
                             </uix:TargetAnchorable.Anchors>
@@ -3787,7 +3775,7 @@
                 </If>
                 <ui:MergeDataTable Destination="[Pharmaceuticals_Data]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="410.4,134.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_4" MissingSchemaAction="Add" Source="[Pharmaceuticals_Data_Broadened]" />
                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="Topic" DataTable="[Pharmaceuticals_Data]" DefaultValue="[&quot;Pharma&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="410.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" MaxLength="5" />
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Chemical keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_39" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Chemical_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Chemical keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_39" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Chemical_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=(intitle%3aPharamceuticals+%7c+inanchor%3aPharamceuticals+%7c+inanchor%3aHealth)+(loc%3aae+%7c+loc%3asa+%7c+loc%3aom+%7c+loc%3aqa+%7c+loc%3akw+%7c+loc%3abh%7c+loc%3aAU+%7c+loc%3aeu)+(site%3azawya.com+%7c+site%3akhaleejtimes.com+%7c+site%3agulfnews.com+%7c+site%3agulfbusiness.com+%7c+site%3aarabianbusiness.com+%7c+site%3aemirates247.com+%7c+site%3ameed.com)&amp;qft=interval%3d%227%22&amp;form=PTFTNR" CvElementArea="249, 211, 985, 75" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Pharamceutical…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="bbe233d9-205f-4dca-8e6a-d8e572d1dd60" InformativeScreenshot="7c351d42900d6adddfc92c57fe15da56.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Pharamceuticals | inanchor:Pharamceuticals | inanchor:Health) (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh| loc:AU | loc:eu) (site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -3823,7 +3811,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Chemical Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_45" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;chemical related news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Chemical Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_45" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;chemical related news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=(intitle%3aChemical+%7c+inanchor%3aChemical+%7c+inanchor%3aPaints+)+(loc%3aae+%7c+loc%3asa+%7c+loc%3aom+%7c+loc%3aqa+%7c+loc%3akw+%7c+loc%3abh%7c+loc%3aAU+%7c+loc%3aeu+%7c+loc%3a*)+(site%3azawya.com+%7c+site%3akhaleejtimes.com+%7c+site%3agulfnews.com+%7c+site%3agulfbusiness.com+%7c+site%3aarabianbusiness.com+%7c+site%3aemirates247.com+%7c+site%3ameed.com+%7c+site%3a%25.com%25)&amp;qft=interval%3d%227%22&amp;form=PTFTNR" CvTextArea="286, 237, 759, 27" CvTextArgument="(intitle:Chemical inanchor:Chemical inanchor:Paints ) (loc:ae loc:sa I" CvType="Text" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Chemical inanc…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="5e9e6976-0455-4678-859f-1356b61e103c" InformativeScreenshot="3d15d19eabcbd9d545614235db69c83c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Chemical | inanchor:Chemical | inanchor:Paints ) (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh| loc:AU | loc:eu | loc:*) (site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com | site:%.com%) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                         </uix:NTypeInto.Target>
@@ -3865,7 +3853,7 @@
                 </If>
                 <ui:MergeDataTable Destination="[Chemical_Data]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="410.4,134.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[Chemical_Data_Broadened]" />
                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="Topic" DataTable="[Chemical_Data]" DefaultValue="[&quot;Chemical&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="410.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" MaxLength="5" />
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Technology Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_40" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Tech_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Technology Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_40" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Tech_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=%28intitle%3ATechnology+%7C+inanchor%3ATechnology%29+%28loc%3Aae+%7C+loc%3Asa+%7C+loc%3Aom+%7C+loc%3Aqa+%7C+loc%3Akw+%7C+loc%3Abh%7C+loc%3AAU+%7C+loc%3Aeu%29+%28site%3Azawya.com+%7C+site%3Akhaleejtimes.com+%7C+site%3Agulfnews.com+%7C+site%3Agulfbusiness.com+%7C+site%3Aarabianbusiness.com+%7C+site%3Aemirates247.com+%7C+site%3Ameed.com%29&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=%28intitle%3Achemical+%7C+inanchor%3Achemical+%29+%28loc%3Aae+%7C+loc%3Asa+%7C+loc%3Aom+%7C+loc%3Aqa+%7C+loc%3Akw+%7C+loc%3Abh%7C+loc%3Aau+%7C+loc%3Aeu%29+%28site%3Azawya.com+%7C+site%3Akhaleejtimes.com+%7C+site%3Agulfnews.com+%7C+site%3Agulfbusiness.com+%7C+site%3Aarabianbusiness.com+%7C+site%3Aemirates247.com+%7C+site%3Ameed.com+%7C+site%3A%25.com%25%29&amp;sc=0-275&amp;sk=&amp;cvid=563CD0D263FC46ECA078B693B3BE1BF7&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvTextArea="286, 235, 762, 30" CvTextArgument="(intitle:Technology | inanchor:Technology) (loc:ae loc:sa loc:om loc:q" CvType="Text" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Technology ina…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="e6d2c31d-c9b3-411f-bb10-adcfeac9531f" InformativeScreenshot="ea785f1da469d5455b5b92c19e19f6a2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Technology | inanchor:Technology) (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh| loc:AU | loc:eu) (site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -3901,7 +3889,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Technology Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_48" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Technology news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Technology Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_48" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Technology news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=%28intitle%3ATechnology+%7C+inanchor%3ATechnology%29&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=%28intitle%3Aeconomy+%7C+inanchor%3Aeconomy%29&amp;sc=0-36&amp;sk=&amp;cvid=7787702A79AB44EABE760AEBE9A83A0C&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvElementArea="247, 212, 985, 74" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Technology ina…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="36fe2e8b-eb48-4443-aaac-8ee59e4dddb4" InformativeScreenshot="69475b68e9b530bec3db82d554bf4cbc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Technology | inanchor:Technology) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                         </uix:NTypeInto.Target>
@@ -3943,7 +3931,7 @@
                 </If>
                 <ui:MergeDataTable Destination="[Technology_Data]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="410.4,134.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_5" MissingSchemaAction="Add" Source="[Technology_Data_Broadened]" />
                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="Topic" DataTable="[Technology_Data]" DefaultValue="[&quot;Tech&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="410.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" MaxLength="5" />
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into IPOs Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_57" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[IPO_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into IPOs Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_57" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[IPO_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=Economy+(loc%3aae+%7c+loc%3asa+%7c+loc%3aom+%7c+loc%3aqa+%7c+loc%3akw+%7c+loc%3abh)++(site%3azawya.com+%7c+site%3akhaleejtimes.com+%7c+site%3agulfnews.com++%7c+site%3agulfbusiness.com+%7c+site%3aarabianbusiness.com+%7c+site%3aemirates247.com+%7c+site%3ameed.com)&amp;qft=interval%3d%227%22&amp;form=PTFTNR" CvElementArea="252, 209, 980, 77" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Economy (loc:ae'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="d843fce4-078c-426d-817b-7a1255654c6e" InformativeScreenshot="67c3a0c38e78a241d404c86eba8410b1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Economy (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh) (site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com) - Bing News' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -3979,7 +3967,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into IPOs Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_49" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;IPO and venture capital news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into IPOs Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_49" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;IPO and venture capital news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=%28intitle%3AIPO+%7C+inanchor%3AIPO%29&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=&amp;sc=0-0&amp;sk=&amp;cvid=66CB2C99113F4BED9C092F42B2250ADB&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvElementArea="250, 212, 979, 74" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:IPO inanchor:I…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="9344bfd9-c44a-4a68-b053-d3e944f8cd8c" InformativeScreenshot="14325b1eb8949b4eebc1442fc5cc08c4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:IPO | inanchor:IPO) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                         </uix:NTypeInto.Target>
@@ -4021,7 +4009,7 @@
                 </If>
                 <ui:MergeDataTable Destination="[IPO_Data]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="410.4,134.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_11" MissingSchemaAction="Add" Source="[IPOS_Data_Broadened]" />
                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="Topic" DataTable="[IPO_Data]" DefaultValue="[&quot;IPOs&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="410.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_15" MaxLength="5" />
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Merger &amp; Acquisition Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_56" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Merger_and_Acquisition_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Merger &amp; Acquisition Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_56" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Merger_and_Acquisition_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=(intitle%3aMerger+%7c+inanchor%3aMerger+%7c+intitle%3aAcquisition+%7c+inanchor%3aAcquisition)+(loc%3aae+%7c+loc%3asa+%7c+loc%3aom+%7c+loc%3aqa+%7c+loc%3akw+%7c+loc%3abh+%7c+loc%3aAU+%7c+loc%3aeu)+(site%3azawya.com+%7c+site%3akhaleejtimes.com+%7c+site%3agulfnews.com+%7c+site%3agulfbusiness.com+%7c+site%3aarabianbusiness.com+%7c+site%3aemirates247.com+%7c+site%3ameed.com)&amp;qft=interval%3d%227%22&amp;form=PTFTNR" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Merger inancho…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="447432fc-aee0-4be2-b52f-17cf8dccd136" InformativeScreenshot="b6c1f57e609ac19829d918dd90b11f49.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Merger | inanchor:Merger | intitle:Acquisition | inanchor:Acquisition) (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh | loc:AU | loc:eu) (site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com) - Bing News' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -4049,19 +4037,19 @@
                     <uix:TargetAnchorable DesignTimeRectangle="275, 463, 1257, 3287" DesignTimeScaleFactor="1.5" FriendlyName="'MEED1hOman copper'" FullSelectorArgument="&lt;webctrl id='algocore' tag='DIV' /&gt;" Guid="7bd167e3-c92b-4854-b582-712dca98bd97" InformativeScreenshot="44551e4cd796f7032ac23b385aa16a4c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Merger | inanchor:Merger | intitle:Acquisition | inanchor:Acquisition) (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh | loc:AU | loc:eu) (site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com) - Bing News' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                   </uix:NExtractData.Target>
                 </uix:NExtractData>
-                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_144">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="410.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_654">
                   <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_1299">
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_2634">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[Merger_Acquisition_Data.RowCount &lt;= 1]" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="If_88">
+                      <If Condition="[Merger_Acquisition_Data.RowCount &lt;= 8]" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="If_354">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
@@ -4071,7 +4059,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Investment news'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_53" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Investment news (site:fortune.com | site:zawya.com | site:wsj.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com|site:Hurriyet.com | site:skynewsarabia.com | site:cnnturk.com | site:cnn.com | site:bbc.com | site:reuters.com | site:menafn.com)&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
+                            <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into 'Investment news'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_53" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Investment news (site:fortune.com | site:zawya.com | site:wsj.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com|site:Hurriyet.com | site:skynewsarabia.com | site:cnnturk.com | site:cnn.com | site:bbc.com | site:reuters.com | site:menafn.com)&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
                               <uix:NTypeInto.Target>
                                 <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=Investment+news+(site%3afortune.com+%7c+site%3azawya.com+%7c+site%3awsj.com+%7c+site%3akhaleejtimes.com+%7c+site%3agulfnews.com+%7c+site%3agulfbusiness.com+%7c+site%3aarabianbusiness.com+%7c+site%3aemirates247.com+%7c+site%3ameed.com%7csite%3aHurriyet.com+%7c+site%3askynewsarabia.com+%7c+site%3acnnturk.com+%7c+site%3acnn.com+%7c+site%3abbc.com+%7c+site%3areuters.com+%7c+site%3amenafn.com)&amp;qft=interval%3d%227%22&amp;form=PTFTNR" CvElementArea="217, 128, 784, 45" CvType="InputBox" DesignTimeRectangle="216, 180, 669, 55" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Investment news'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="c49f0366-d123-49c2-a7f6-6ce900285a83" InformativeScreenshot="1d361d0c9a48c3a7dbed0fe8ca8c0746.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Investment news (site:fortune.com | site:zawya.com | site:wsj.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com|site:Hurriyet.com | site:skynewsarabia.com | site:cnnturk.com | site:cnn.com | site:bbc.com | site:reuters.com | site:menafn.com) - Search News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                               </uix:NTypeInto.Target>
@@ -4110,7 +4098,7 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
@@ -4122,7 +4110,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Merger&amp;Acquisition Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_50" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Merger of companies news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Merger&amp;Acquisition Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_50" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Merger of companies news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=%28intitle%3AMerger+%7C+inanchor%3AMerger+%7C+intitle%3AAcquisition+%7C+inanchor%3AAcquisition%29&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=%28intitle%3Aipo+%7C+inanchor%3Aipo%29&amp;sc=0-28&amp;sk=&amp;cvid=F0D0B6C2733E4520BE386B4E6F2E5998&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvElementArea="251, 211, 980, 75" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Merger inancho…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="0d797b14-2c20-4519-8509-cbb59ed8dd8b" InformativeScreenshot="b6c1f57e609ac19829d918dd90b11f49.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Merger | inanchor:Merger | intitle:Acquisition | inanchor:Acquisition) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                         </uix:NTypeInto.Target>
@@ -4164,7 +4152,7 @@
                 </If>
                 <ui:MergeDataTable Destination="[Merger_Acquisition_Data]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="410.4,134.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_10" MissingSchemaAction="Add" Source="[Merger_Acquisition_Data_Broadened]" />
                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="Topic" DataTable="[Merger_Acquisition_Data]" DefaultValue="[&quot;Merger&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="410.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_9" MaxLength="5" />
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Education Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_44" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Education_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Education Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_44" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Education_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=Economy+(loc%3aae+%7c+loc%3asa+%7c+loc%3aom+%7c+loc%3aqa+%7c+loc%3akw+%7c+loc%3abh)++(site%3azawya.com+%7c+site%3akhaleejtimes.com+%7c+site%3agulfnews.com++%7c+site%3agulfbusiness.com+%7c+site%3aarabianbusiness.com+%7c+site%3aemirates247.com+%7c+site%3ameed.com)&amp;qft=interval%3d%227%22&amp;form=PTFTNR" CvElementArea="251, 210, 982, 77" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Economy (loc:ae'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="e5f5d01f-db89-4de3-9108-2a9269d783bd" InformativeScreenshot="67c3a0c38e78a241d404c86eba8410b1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Economy (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh) (site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com) - Bing News' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -4200,7 +4188,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Education Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_51" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Education news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Education Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_51" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Education news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=%28intitle%3AEducation+%7C+inanchor%3AEducation%29&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=%28intitle%3Aeducation+%7C+inanchor%3Aeducation%29&amp;sc=0-40&amp;sk=&amp;cvid=40FBEFD39A664971B57B2D246935D77E&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvElementArea="248, 213, 984, 74" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Education inan…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="378d3c69-38f1-43c4-a31a-24f49939dd93" InformativeScreenshot="380a90e8adab4b69ddbd48a35b4e43ef.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Education | inanchor:Education) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                         </uix:NTypeInto.Target>
@@ -4242,7 +4230,7 @@
                 </If>
                 <ui:MergeDataTable Destination="[Education_Data]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="410.4,134.4" sap2010:WorkflowViewState.IdRef="MergeDataTable_7" MissingSchemaAction="Add" Source="[Education_Data_Broadened]" />
                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" Unique="{x:Null}" ColumnName="Topic" DataTable="[Education_Data]" DefaultValue="[&quot;Education&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="410.4,188" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_10" MaxLength="5" />
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Economy Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_43" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Economy_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
+                <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Economy Keywords" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="410.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_43" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[Economy_Keywords + &quot;[k(Enter)]&quot;]" Version="V3">
                   <uix:NTypeInto.Target>
                     <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=Economy+(loc%3aae+%7c+loc%3asa+%7c+loc%3aom+%7c+loc%3aqa+%7c+loc%3akw+%7c+loc%3abh)++(site%3azawya.com+%7c+site%3akhaleejtimes.com+%7c+site%3agulfnews.com++%7c+site%3agulfbusiness.com+%7c+site%3aarabianbusiness.com+%7c+site%3aemirates247.com+%7c+site%3ameed.com)&amp;qft=interval%3d%227%22&amp;form=PTFTNR" CvElementArea="252, 209, 980, 77" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Economy (loc:ae'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="62ecc145-47de-40dd-b8a3-5a6be5eb7228" InformativeScreenshot="67c3a0c38e78a241d404c86eba8410b1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Economy (loc:ae | loc:sa | loc:om | loc:qa | loc:kw | loc:bh) (site:zawya.com | site:khaleejtimes.com | site:gulfnews.com | site:gulfbusiness.com | site:arabianbusiness.com | site:emirates247.com | site:meed.com) - Bing News' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
                   </uix:NTypeInto.Target>
@@ -4278,7 +4266,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Economy Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_52" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Economy news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
+                      <uix:NTypeInto ActivateBefore="False" ClickBeforeMode="Single" DisplayName="Type Into Economy Keywords from around the world news" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="333.6,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_52" InteractionMode="DebuggerApi" ScopeIdentifier="25dc8655-9a68-4800-9dd9-8f156cae2ad9" Text="[&quot;Economy news&quot;+ &quot;[k(Enter)]&quot;]" Version="V3">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="https://www.bing.com/news/search?q=%28intitle%3AEducation+%7C+inanchor%3AEducation%29&amp;qs=n&amp;form=QBNT&amp;sp=-1&amp;lq=0&amp;pq=%28intitle%3Aeducation+%7C+inanchor%3Aeducation%29&amp;sc=0-40&amp;sk=&amp;cvid=40FBEFD39A664971B57B2D246935D77E&amp;ghsh=0&amp;ghacc=0&amp;ghpl=" CvElementArea="248, 213, 984, 74" CvType="InputBox" DesignTimeRectangle="260, 216, 803, 66" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'(intitle:Education inan…'" FullSelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='sb_form_q' tag='INPUT' type='search' class='b_searchbox' aaname='' /&gt;" Guid="378d3c69-38f1-43c4-a31a-24f49939dd93" InformativeScreenshot="380a90e8adab4b69ddbd48a35b4e43ef.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(intitle:Education | inanchor:Education) - Bing News' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                         </uix:NTypeInto.Target>
@@ -4451,7 +4439,7 @@
               <av:Size x:Key="ShapeSize">200,575.2</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="Sending Email&#xA;&#xA;1. Extarcting top 5 news from each news sources for 8 Sectors(Energy, Pharmaceutical, Chemicals, Technology, IPOs, Merger and Acquisition , Education and Economy and others).&#xA;&#xA;2. Using Levenshtein Algorithum to check if the news have some similarity, if yes remove one of the similar news and keep just one.&#xA;&#xA;3. Appending top 5 news in a text file for different sectors.&#xA;&#xA;4. Sending the Mail using outlook.&#xA;&#xA;5. Clear all the data from the excel so that the news will not repeat on next run of the programme.&#xA;&#xA;6. Clearing all the data stored in text file so that data does not repeat in mail." DisplayName="Send Email from test env" sap:VirtualizedContainerService.HintSize="784,7048" sap2010:WorkflowViewState.IdRef="Sequence_2633">
+          <Sequence sap2010:Annotation.AnnotationText="Sending Email&#xA;&#xA;1. Extarcting top 5 news from each news sources for 8 Sectors(Energy, Pharmaceutical, Chemicals, Technology, IPOs, Merger and Acquisition , Education and Economy and others).&#xA;&#xA;2. Using Levenshtein Algorithum to check if the news have some similarity, if yes remove one of the similar news and keep just one.&#xA;&#xA;3. Appending top 5 news in a text file for different sectors.&#xA;&#xA;4. Sending the Mail using outlook.&#xA;&#xA;5. Clear all the data from the excel so that the news will not repeat on next run of the programme.&#xA;&#xA;6. Clearing all the data stored in text file so that data does not repeat in mail." DisplayName="Send Email from test env" sap:VirtualizedContainerService.HintSize="200,575.2" sap2010:WorkflowViewState.IdRef="Sequence_2633">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Table_Data_Energy" />
               <Variable x:TypeArguments="x:String" Name="Table_Data_Pharma" />
@@ -4483,13 +4471,13 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Excel " sap:VirtualizedContainerService.HintSize="721.6,3596" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_29" ResizeWindow="None" WorkbookPath="Excel_File\Project News.xlsx">
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Excel " sap:VirtualizedContainerService.HintSize="721.6,3589.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_29" ResizeWindow="None" WorkbookPath="Excel_File\Project News.xlsx">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,3326.4" sap2010:WorkflowViewState.IdRef="Sequence_1758">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,3320" sap2010:WorkflowViewState.IdRef="Sequence_1758">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5412,7 +5400,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:CommentOut>
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_166">
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_166">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
                       </Assign.To>
@@ -5430,14 +5418,14 @@
                           <ActivityAction.Argument2>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                           </ActivityAction.Argument2>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="884.8,4199.2" sap2010:WorkflowViewState.IdRef="Sequence_1595">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="884.8,3380" sap2010:WorkflowViewState.IdRef="Sequence_1595">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[i(&quot;C&quot;) = &quot;Pharma&quot;]" sap:VirtualizedContainerService.HintSize="822.4,4088" sap2010:WorkflowViewState.IdRef="If_147">
+                            <If Condition="[i(&quot;C&quot;) = &quot;Pharma&quot;]" sap:VirtualizedContainerService.HintSize="822.4,3240" sap2010:WorkflowViewState.IdRef="If_147">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5445,13 +5433,13 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <Sequence sap:VirtualizedContainerService.HintSize="788.8,3005.6" sap2010:WorkflowViewState.IdRef="Sequence_1593">
+                                <Sequence sap:VirtualizedContainerService.HintSize="788.8,3004.8" sap2010:WorkflowViewState.IdRef="Sequence_1593">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="False" sap:VirtualizedContainerService.HintSize="745.6,2692.8" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_84" Range="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;&quot;)]" SaveAfterEachRow="False">
+                                  <ueab:ExcelForEachRowX DisplayName="For Each Excel Row" EmptyRowBehavior="Stop" HasHeaders="False" sap:VirtualizedContainerService.HintSize="745.6,2692" sap2010:WorkflowViewState.IdRef="ExcelForEachRowX_84" Range="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;&quot;)]" SaveAfterEachRow="False">
                                     <ueab:ExcelForEachRowX.Body>
                                       <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
                                         <ActivityAction.Argument1>
@@ -5460,13 +5448,13 @@
                                         <ActivityAction.Argument2>
                                           <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                                         </ActivityAction.Argument2>
-                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="712,2500" sap2010:WorkflowViewState.IdRef="Sequence_1588">
+                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="712,2499.2" sap2010:WorkflowViewState.IdRef="Sequence_1588">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <If Condition="[j(&quot;C&quot;) = &quot;Pharma&quot;]" sap:VirtualizedContainerService.HintSize="649.6,2388" sap2010:WorkflowViewState.IdRef="If_144">
+                                          <If Condition="[j(&quot;C&quot;) = &quot;Pharma&quot;]" sap:VirtualizedContainerService.HintSize="649.6,2387.2" sap2010:WorkflowViewState.IdRef="If_144">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5474,13 +5462,13 @@
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
                                             <If.Then>
-                                              <Sequence sap:VirtualizedContainerService.HintSize="616,2122.4" sap2010:WorkflowViewState.IdRef="Sequence_1586">
+                                              <Sequence sap:VirtualizedContainerService.HintSize="616,2121.6" sap2010:WorkflowViewState.IdRef="Sequence_1586">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <If Condition="[i(&quot;A&quot;) &lt;&gt; j(&quot;A&quot;)]" sap:VirtualizedContainerService.HintSize="572.8,2032.8" sap2010:WorkflowViewState.IdRef="If_143">
+                                                <If Condition="[i(&quot;A&quot;) &lt;&gt; j(&quot;A&quot;)]" sap:VirtualizedContainerService.HintSize="572.8,2032" sap2010:WorkflowViewState.IdRef="If_143">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5488,13 +5476,13 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <If.Then>
-                                                    <Sequence sap:VirtualizedContainerService.HintSize="539.2,1849.6" sap2010:WorkflowViewState.IdRef="Sequence_1584">
+                                                    <Sequence sap:VirtualizedContainerService.HintSize="539.2,1848.8" sap2010:WorkflowViewState.IdRef="Sequence_1584">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <Sequence sap2010:Annotation.AnnotationText="Levenshtein Algorithum" DisplayName="" sap:VirtualizedContainerService.HintSize="496,1760" sap2010:WorkflowViewState.IdRef="Sequence_1583">
+                                                      <Sequence sap2010:Annotation.AnnotationText="Levenshtein Algorithum" DisplayName="" sap:VirtualizedContainerService.HintSize="496,1759.2" sap2010:WorkflowViewState.IdRef="Sequence_1583">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5502,7 +5490,7 @@
                                                             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_119">
+                                                        <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_119">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[originalString]</OutArgument>
                                                           </Assign.To>
@@ -5833,7 +5821,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ueab:ExcelForEachRowX>
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_124">
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_124">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
                       </Assign.To>
@@ -5851,14 +5839,14 @@
                           <ActivityAction.Argument2>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                           </ActivityAction.Argument2>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="838.4,2444" sap2010:WorkflowViewState.IdRef="Sequence_1625">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="726.4,2183.2" sap2010:WorkflowViewState.IdRef="Sequence_1625">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[i(&quot;C&quot;) = &quot;Chemical&quot;]" sap:VirtualizedContainerService.HintSize="776,2072" sap2010:WorkflowViewState.IdRef="If_154">
+                            <If Condition="[i(&quot;C&quot;) = &quot;Chemical&quot;]" sap:VirtualizedContainerService.HintSize="664,1218.4" sap2010:WorkflowViewState.IdRef="If_154">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5866,7 +5854,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <Sequence sap:VirtualizedContainerService.HintSize="630.4,1888.8" sap2010:WorkflowViewState.IdRef="Sequence_1623">
+                                <Sequence sap:VirtualizedContainerService.HintSize="630.4,1888" sap2010:WorkflowViewState.IdRef="Sequence_1623">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -6200,7 +6188,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ueab:ExcelForEachRowX>
-                                  <If Condition="[Difference_Between_Strings &gt;= Percentage]" sap:VirtualizedContainerService.HintSize="587.2,916" sap2010:WorkflowViewState.IdRef="If_152">
+                                  <If Condition="[Difference_Between_Strings &gt;= Percentage]" sap:VirtualizedContainerService.HintSize="587.2,915.2" sap2010:WorkflowViewState.IdRef="If_152">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -6208,13 +6196,13 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="553.6,732.8" sap2010:WorkflowViewState.IdRef="Sequence_1618">
+                                      <Sequence sap:VirtualizedContainerService.HintSize="553.6,732" sap2010:WorkflowViewState.IdRef="Sequence_1618">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <If Condition="[Count &lt;= 6]" sap:VirtualizedContainerService.HintSize="510.4,643.2" sap2010:WorkflowViewState.IdRef="If_151">
+                                        <If Condition="[Count &lt;= 6]" sap:VirtualizedContainerService.HintSize="510.4,642.4" sap2010:WorkflowViewState.IdRef="If_151">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -6222,13 +6210,13 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <If.Then>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="476.8,345.6" sap2010:WorkflowViewState.IdRef="Sequence_1614">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="476.8,344.8" sap2010:WorkflowViewState.IdRef="Sequence_1614">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_129">
+                                              <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_129">
                                                 <Assign.To>
                                                   <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
                                                 </Assign.To>
@@ -6285,7 +6273,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ueab:ExcelForEachRowX>
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_131">
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_131">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
                       </Assign.To>
@@ -6303,14 +6291,14 @@
                           <ActivityAction.Argument2>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                           </ActivityAction.Argument2>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="838.4,2361.6" sap2010:WorkflowViewState.IdRef="Sequence_1655">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="622.4,1096" sap2010:WorkflowViewState.IdRef="Sequence_1655">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[i(&quot;C&quot;) = &quot;Tech&quot;]" sap:VirtualizedContainerService.HintSize="776,984" sap2010:WorkflowViewState.IdRef="If_160">
+                            <If Condition="[i(&quot;C&quot;) = &quot;Tech&quot;]" sap:VirtualizedContainerService.HintSize="560,984" sap2010:WorkflowViewState.IdRef="If_160">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -6742,7 +6730,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ueab:ExcelForEachRowX>
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_138">
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_138">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
                       </Assign.To>
@@ -6760,14 +6748,14 @@
                           <ActivityAction.Argument2>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                           </ActivityAction.Argument2>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="838.4,2305.6" sap2010:WorkflowViewState.IdRef="Sequence_1682">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="622.4,1096" sap2010:WorkflowViewState.IdRef="Sequence_1682">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[i(&quot;C&quot;) = &quot;IPOs&quot;]" sap:VirtualizedContainerService.HintSize="776,984" sap2010:WorkflowViewState.IdRef="If_167">
+                            <If Condition="[i(&quot;C&quot;) = &quot;IPOs&quot;]" sap:VirtualizedContainerService.HintSize="560,984" sap2010:WorkflowViewState.IdRef="If_167">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -7201,7 +7189,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ueab:ExcelForEachRowX>
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_144">
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_144">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
                       </Assign.To>
@@ -7219,14 +7207,14 @@
                           <ActivityAction.Argument2>
                             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                           </ActivityAction.Argument2>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="838.4,2388" sap2010:WorkflowViewState.IdRef="Sequence_1707">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="838.4,2387.2" sap2010:WorkflowViewState.IdRef="Sequence_1707">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[i(&quot;C&quot;) = &quot;M&amp;A&quot;]" sap:VirtualizedContainerService.HintSize="776,2276" sap2010:WorkflowViewState.IdRef="If_173">
+                            <If Condition="[i(&quot;C&quot;) = &quot;M&amp;A&quot;]" sap:VirtualizedContainerService.HintSize="776,2232.8" sap2010:WorkflowViewState.IdRef="If_173">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="742.4,2092.8" sap2010:WorkflowViewState.IdRef="Sequence_1705">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -7654,7 +7642,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ueab:ExcelForEachRowX>
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_150">
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_150">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
                       </Assign.To>
@@ -7679,7 +7667,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[i(&quot;C&quot;) = &quot;Edu&quot;]" sap:VirtualizedContainerService.HintSize="776,2192.8" sap2010:WorkflowViewState.IdRef="If_179">
+                            <If Condition="[i(&quot;C&quot;) = &quot;Edu&quot;]" sap:VirtualizedContainerService.HintSize="776,2150.4" sap2010:WorkflowViewState.IdRef="If_179">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="742.4,2010.4" sap2010:WorkflowViewState.IdRef="Sequence_1730">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -8108,7 +8096,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ueab:ExcelForEachRowX>
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_156">
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_156">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
                       </Assign.To>
@@ -8133,7 +8121,7 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[i(&quot;C&quot;) = &quot;Economy&quot;]" sap:VirtualizedContainerService.HintSize="776,2275.2" sap2010:WorkflowViewState.IdRef="If_185">
+                            <If Condition="[i(&quot;C&quot;) = &quot;Economy&quot;]" sap:VirtualizedContainerService.HintSize="776,2276" sap2010:WorkflowViewState.IdRef="If_185">
                               <If.Then>
                                 <Sequence sap:VirtualizedContainerService.HintSize="742.4,2092.8" sap2010:WorkflowViewState.IdRef="Sequence_1755">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -8567,7 +8555,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ueab:ExcelForEachRowX>
-                    <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_162">
+                    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_162">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
                       </Assign.To>
